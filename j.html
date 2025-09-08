@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <script>
+            var a = 4;
+            const b = 4;
+            console.log("a=  " + a);
+            console.log("b=  " + b);    
+            avg= (a + b) / 2;
+            console.log("avg=  " + avg);
+
+            //if else example
+            d =27;
+            if (d%2==0) {
+                console.log("d is even");
+            } else {
+                console.log("d is odd");
+            }
+            //greater than example
+            if (b > d){
+                console.log("b is greater than d" + b);
+            } else {
+                console.log(+ b + " is not greater than " + d);
+            }
+            // if else example
+            if (b >0) {
+                console.log("b is positive");
+            } else if (b < 0) {
+                console.log("b is negative");
+            } else {
+                console.log("b is zero");
+            }
+
+            //nested if example
+            if (d> 0) {
+                console.log("d is positive");
+            } else if (d < 0) {
+                console.log("d is negative");
+            } else if (d == 0) {
+                console.log("d is zero");
+            }
+
+            a=2;
+            c=5;
+            d=4;
+
+            if (a > b && a > c) {
+                console.log("a is the greatest");
+            } else if (b > a && b > c) {
+                console.log("b is the greatest");
+            } else {
+                console.log("c is the greatest");
+            }
+
+            //For loop example
+            for (i = 0; i <=10; i++) {
+                console.log(i);
+            }
+
+            //print even numers
+            for (i = 0; i <= 10; i++) {
+                if (i % 2 == 0) {
+                    
+                    console.log("even numbers "+i);
+                }
+            }
+
+            //function add
+            function add(a1, a2) {
+                sum = a1 + a2;
+                console.log("sum= " + sum);
+            }
+            add(2, 3);
+
+            //function calculator
+            {% comment %} num1=prompt("Enter first number");
+            num2=prompt("Enter second number"); {% endcomment %}
+            function calculator(num1, num2) {
+                addition = parseInt(num1) + parseInt(num2);
+                subtraction = num1 - num2;
+                multiplication = num1 * num2;
+                division = num1 / num2;
+                console.log("Addition: " + addition);
+                console.log("Subtraction: " + subtraction);     
+                console.log("Multiplication: " + multiplication);
+                console.log("Division: " + division);
+            }
+
+            var array = [1, 2, 3, 4, 5];
+            console.log("Array: " + array);
+            console.log("Array length: " + array.length);
+            console.log(" fourth element: " + array[3]);
+
+            var persons= [
+                {name: "John", age: 30},
+                {name: "Jane", age: 25},
+                {name: "Doe", age: 35},
+            ]
+            console.log(persons[2].name);
+            console.log(persons[1].age);
+
+  
+
+
+   
+        </script>   
+    </head>
+    <body
+        <h1> java example </h1>
+            <button onclick="calculator(num1, num2)">Calculate</button>
+        
+            <p id="demo"></p>
+            <script>
+                cont hour= new Date().getHours();
+                console.log(hour)
+                let greeting
+
+                if (hour < 12) {
+                    greeting = "Good morning!";
+                } else {
+                    greeting = "Good afternoon!";
+                }
+                document.getElementById("demo").innerHTML = greeting
+            </script>
+          
+
+    </body>
+</html>

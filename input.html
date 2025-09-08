@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>input</title>
+    </head>
+    <body>
+        <input type="text" id="input">
+        <button onclick="show()">click here</button>
+        <h1 id="display-header"></h1>
+        <script>
+            function show() {
+                var input = document.getElementById("input").value;
+                document.getElementById("display-header").innerHTML = input;
+                if (input === "Thrissur" || input === "thrissur") {
+                    console.log("You entered Thrissur!");
+                   alert("You entered Thrissur!");
+                }
+            }
+        </script>
+            
+    </body>
+</html>

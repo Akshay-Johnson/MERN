@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Color Change</title>
+    <style>
+        #colorBox {
+            width: 300px;
+            height: 300px;
+            border: 4px solid black;
+            margin-bottom: 10px;
+        }
+        button {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="colorBox"></div>
+
+    <button onclick="changeColor('blue')">blue</button>
+    <button onclick="changeColor('red')">red</button>
+    <button onclick="changeColor('black')">black</button>
+    <button onclick="changeColor('green')">green</button>
+    <script>
+        function changeColor(color) {
+            document.getElementById('colorBox').style.backgroundColor = color;
+        }
+    </script>
+    
+</body> 
+</html>

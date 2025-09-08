@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #000000ff;
+            padding: 20px;
+        }
+        form {
+            background: white;
+            padding: 50px;
+            border-radius: 8px;
+            width: 300px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px;
+            background: #aacce4ff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #318938ff;
+        }
+        label.error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: block;
+        }
+
+         .checkbox-container {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .checkbox-container label {
+        margin: 0 10px 20px 20px;
+        font-weight: normal;
+        
+    }
+    </style>
+</head>
+<body>
+
+    <form id="myForm">
+        <h2>Register</h2>
+        
+        <label for="name">First Name:</label>
+        <input type="text" name="firstname" id="firstname">
+
+        <label for="name">Last Name:</label>
+        <input type="text" name="lastname" id="lastname">
+
+        <label for="name">UserName:</label>
+        <input type="text" name="username" id="username">
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" name="confirm_password" id="confirm_password">
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email">
+        <div class="checkbox-container">
+        <label for="agree">Please agree to our policy </label>
+        <input type="checkbox" class="checkbox" id="agree" name="agree"></div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+$(document).ready(function () {
+    $("#myForm").validate({
+        rules: {
+            firstname: {
+                required: true,
+                minlength: 3
+            },
+            lastname: {
+                required: true,
+                minlength: 3
+            },
+            username: {
+                required: true,
+                minlength: 3
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 6
+            },
+            confirm_password: {
+                required: true,
+                equalTo: "#password"
+            },
+            agree: {
+                required: true
+            }
+        },
+        messages: {
+            firstname: {
+                required: "Please enter your first name",
+                minlength: "First name must be at least 3 characters long"
+            },
+            lastname: {
+                required: "Please enter your last name",
+                minlength: "Last name must be at least 3 characters long"
+            },
+            username: {
+                required: "Please enter your username",
+                minlength: "Username must be at least 3 characters long"
+            },
+            email: {
+                required: "Please enter your email",
+                email: "Enter a valid email address"
+            },
+            password: {
+                required: "Please provide a password",
+                minlength: "Password must be at least 6 characters long"
+            },
+            confirm_password: {
+                required: "Please confirm your password",
+                equalTo: "Passwords do not match"
+            },
+            agree: {
+                required: "You must agree to our policy"
+            }
+        },
+        submitHandler: function (form) {
+            alert("Form submitted successfully!");
+            form.submit();
+        }
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+<html>
+    <head>
+        <style>
+            body{
+                background-color: #f0f2f5;
+                height: 2px;
+                width:50%;
+                margin: 10;  
+                padding: 0;
+                font-family: Arial, sans-serif;
+                overflow: hidden;
+                
+            }
+
+            #fbheaderbase{
+                width:50%;
+                height: 50px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: white;
+                z-index: 1;
+                font-family: Arial, sans-serif;
+                font-size: 20px;
+
+            }
+
+            .fbheader{
+                width: 100%;
+                height: 100px;
+                background-color: #3b5998;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 10;
+                flex:1;
+                font-size: 20px;
+            }
+
+            #img1{
+                left:90px;
+                height: 40px;
+                width: 10px;
+                top: 0px;
+            }
+
+            #img2{
+                left: 120px;
+                height: 100px;
+                width: 100px;
+                top: 120px;
+                position: absolute;
+                
+            }
+
+            #form1{
+                left: 750px;
+                height: 50px;
+                width: 200px;
+                top: 25px;
+                font-family: Arial, sans-serif;
+                color: white;
+                flex: 1;
+
+                font-size: 15px;
+            }
+
+            #form2{
+                left: 950px;
+                height: 50px;
+                width: 200px;
+                top: 25px;
+                font-family: Arial, sans-serif;
+                color: white;
+                font-size: 15px;
+                
+            }
+
+            #form3{
+                top:120px;
+                left: 750px;
+                font-family: Arial, sans-serif;
+                font-size: 20px;
+                color: #3b5998;
+                height: 496px;
+                width: 400px;
+            }
+
+            .fbbody{
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 200%;
+                height: 250px;
+               
+            }
+
+            #intro1{
+                left: 120px;
+                top:40px;
+                font-family: Arial, sans-serif;
+                font-size: 23px;
+                font-weight: bold;
+                color: #000000ff;
+                height: 50px;
+                width: 500px;
+                position: absolute;
+            }
+
+            #intro2{
+                left: 750px;
+                top: 20px;
+                font-family: Arial, sans-serif;
+                font-weight: bold;
+                font-size: 40px;
+                color: #000000ff;
+                height: 50px;
+                width: 500px;
+                position: absolute;
+                z-index: 5;
+            }
+
+            #intro3{
+                left: 750px;
+                top: 80px;
+                font-family: Arial, sans-serif;
+                font-size: 30px;
+                color: #000000ff;
+                height: 50px;
+                width: 500px;
+                position: absolute;
+            }
+
+            #namebox{
+                width: 195px;
+                height: 50px;
+                border-radius: 5px 5px 5px 5px;
+                background: white;
+                padding: 5px;
+                font-size:15px;
+                margin-top: 5px;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #ccc;
+                
+             
+              
+                
+            }
+
+             #namebox1{
+                width: 195px;
+                height: 50px;
+                border-radius: 5px 5px 5px 5px;
+                background: white;
+                padding: 5px;
+                font-size:15px;
+                margin-top: 5px;
+                margin-left: 10px;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #ccc;
+                top: 0px;
+                
+                position: absolute;
+                
+            }
+
+            #mailbox{
+                width: 400px;
+                height: 50px;
+                border-radius: 5px 5px 5px 5px;
+                background: white;
+                padding: 10px;
+                font-size:15px;
+                margin-top: 10px;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #ccc;
+            }
+
+            #r-b{
+                font-size:12px;
+                height: 15px;
+                width: 15px;
+            }
+
+            .button2{
+                width:250px;
+                height: 50px;
+                left: 50px;
+                top: 505px;
+                background: #27922dff;
+                font-family: Arial, sans-serif;
+                font-size: 20px;
+                color: white;
+                font-weight: bold;
+                border-radius: 5px 5px 5px 5px;
+                border-width: 1px;
+                border-style: solid;
+                border-color: #ccc;
+                cursor: pointer;    
+                outline: none;
+                position: absolute;
+                left: 5px;
+                
+            }
+
+            #intro4{
+                font-family: Arial, sans-serif;
+                font-size: 20px;
+                color: #3b5998;
+                position: absolute;
+                top: 375px;
+                position: absolute;
+                
+            }
+
+            .button3{
+                position: absolute;
+                top: 23px;
+                
+                color: white;
+                background-color: #3b5998;
+                font-weight: bold;
+                left: 200px;
+                font-family: Arial, sans-serif;
+                color: #ffffffff;
+            }
+
+            #for{
+                color: white;
+                font-family: Arial, sans-serif;
+                font-size: 15px;
+                flex: 1;
+                position: absolute;
+                top: 35px;
+                width: 150px;
+                height: 20px;
+               
+                
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="fbheader">
+            <div id="img1" class="fbheader"><img src="fb1.png" width="250px" height="100px" >   </div>
+            <div id="form1" class="fbheader">Email or Phone<input type="text" placeholder=""></div>
+            <div id="form2" class="fbheader">Password<br>
+            <input type="password" placeholder="" > <br> 
+            <p id="for" >Forgotten account?</p>
+            <input type="button" id="button3" value="Log In" class="button3"> <br>
+          
+            </div>
+        
+        </div>
+
+            
+
+    <div class="fbbody">
+        <div id="intro1">Facebook helps you connect and share with the people in your life.</div>
+        <div id="intro2">Create an account</div>
+        <div id="img2" class="fbbody"><img src="fb2.png" ></div>
+        <div id="intro3">It's quick and easy.</div>
+        <div id="form3" class="fbbody">
+            <input type="text" id="namebox" placeholder="First Name">
+            <input type="text" id="namebox1" placeholder="Sur Name"><br>
+            <input type="text" id="mailbox" placeholder="Mobile Number or Email Address"><br>
+            <input type="text" id="mailbox" placeholder="New Password"><br><br>
+            Brithday<br><input type="date" id="namebox" ><br><br>
+            Gender <br><br>
+            <input type="radio" id="r-b" name="sex" value="Male"> Male
+            <input type="radio" id="r-b" name="sex" value="Female">Female
+            <input type="radio" id="r-b" name="sex" value="Custom">Custom<br>
+            
+            <p id="intro4">By clicking Sign Up, you agree to our Terms, Data Policy and Cookie Policy. You may receive SMS notifications from us and can opt out at any time.</p>
+           <input type="button" id="button2" value="Sign Up" class="button2"> <br>
+        </div>
+    </div>
+
+    </body>
+</html>
+            
+            

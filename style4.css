@@ -1,0 +1,23 @@
+.key {
+  font-size: 7vw;         /* decreased from 15vw */
+  display: inline-block;
+  letter-spacing: -0.5vw; /* decreased spacing */
+  transition: transform 0.2s;
+}
+
+/* ...existing code... */
+
+a {
+  text-decoration: none;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;        /* decreased from 16px */
+  color: white;
+  background-color: black;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  padding: 3px 7px;       /* decreased padding */
+  transition: 0.1s all ease-in;
+}
+
+/* ...existing

@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title>Gallery</title>
+        <link   rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+   
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body{
+            margin: 0;
+            font-family: Arial, sans-serif;
+            
+        }
+
+        .header{
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+            font-size: 24px;
+        }
+
+        .row{
+            display:flex;
+            flex-wrap: wrap;
+            padding: 0 4px;
+
+        }
+
+        .column{
+            flex: 25%;
+            max-width: 25%;
+            padding: 0 4px;
+        
+        }
+
+        .column img{
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        @media (max-width: 800px) {
+            .column {
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+
+        </style>
+         </head>
+    <body>
+
+        <div class="header">
+            <h2 class="animate__animated animate__bounce">Gallery</h2>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <img src="image1.avif" alt="Image 1" style="width:100%">
+                <img src="image2.avif" alt="Image 1" style="width:100%">
+                <img src="image1.avif" alt="Image 1" style="width:100%">
+                <img src="image3.avif" alt="Image 1" style="width:100%">
+                <img src="image2.avif" alt="Image 1" style="width:100%">
+                <img src="image1.avif" alt="Image 1" style="width:100%">
+                <img src="image3.avif" alt="Image 1" style="width:100%">
+
+            </div>
+
+             <div class="column">
+                <img src="image2.avif" alt="Image 1" style="width:100%">
+                <img src="image3.avif" alt="Image 1" style="width:100%">
+                <img src="image3.avif" alt="Image 1" style="width:100%">
+                <img src="image1.avif" alt="Image 1" style="width:100%">
+                <img src="image2.avif" alt="Image 1" style="width:100%">
+                <img src="image3.avif" alt="Image 1" style="width:100%">
+                <img src="image2.avif" alt="Image 1" style="width:100%">
+
+            </div>
+
+             <div class="column">
+                <img src="image1.avif" alt="Image 1" style="width:100%">
+                <img src="image3.avif" alt="Image 1" style="width:100%">
+                <img src="image2.avif" alt="Image 1" style="width:100%">
+                <img src="image3.avif" alt="Image 1" style="width:100%">
+                <img src="image1.avif" alt="Image 1" style="width:100%">
+                <img src="image2.avif" alt="Image 1" style="width:100%">
+                <img src="image3.avif" alt="Image 1" style="width:100%">
+
+            </div>
+
+            <div class="column">
+                <img src="image2.avif" alt="Image 1" style="width:100%">
+                <img src="image3.avif" alt="Image 1" style="width:100%">
+                <img src="image3.avif" alt="Image 1" style="width:100%">
+                <img src="image1.avif" alt="Image 1" style="width:100%">
+                <img src="image2.avif" alt="Image 1" style="width:100%">
+                <img src="image3.avif" alt="Image 1" style="width:100%">
+                <img src="image2.avif" alt="Image 1" style="width:100%">
+
+            </div>
+
+        
+        </div>
+        </body>
+</html>

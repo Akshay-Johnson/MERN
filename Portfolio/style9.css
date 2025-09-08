@@ -1,0 +1,36 @@
+.glow-text {
+  background: 50% 100% / 50% 50% no-repeat
+              radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 10vw;
+  font-family: "Source Sans Pro", sans-serif;
+  animation: reveal 6s ease-in-out infinite,
+             glow 4.5s linear infinite;
+}
+
+/* Looping reveal */
+@keyframes reveal {
+  0% {
+    letter-spacing: normal;
+    background-size: 100% 100%;
+  }
+  80% {
+    letter-spacing: 8px;
+  }
+  100% {
+    letter-spacing: normal;
+    background-size: 100% 100%; /* reset */
+  }
+}
+
+/* Glow stays looping */
+@keyframes glow {
+  40%, 100% {
+    text-shadow: none;
+  }
+  40% {
+    text-shadow: 0 0 0px #fff;
+  }
+}

@@ -1,0 +1,501 @@
+<html>
+<head>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>zomato</title>
+    <style>
+      body {
+        
+        font-family: Arial, sans-serif;
+        text-align: center;
+        overflow-x: hidden; 
+        display:fixed;
+
+        
+       
+      }
+      h1 {
+        font-size: 4.5em;
+        position: relative;
+        z-index: 1;
+        align-items: center;
+        font-style: italic;
+        font-weight: bold;
+        font-weight: 1000;
+        top: 180px;
+        color: white;
+      
+
+      }
+      .p1{
+        font-size: 2.5em;
+        top: 100px;
+        position: relative;
+        color: white;
+        
+      }
+      .p2{
+        font-size: 3.5em;
+        position: relative;
+        top: 80px;
+        color: red;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+        
+      }
+
+      .p3{
+        font-size: 1.5em;
+        position: relative;
+        top: 100px;
+        color: grey;
+        position: relative;
+        z-index: 1;
+      }
+      .div2{
+        margin: auto;
+        width: 400px;
+        height: 700px;
+        top: 100px;
+        z-index: 0;
+        padding: 40px;
+        overflow-x: hidden; 
+      }
+
+      .div3{
+        margin: auto;
+        width: auto;
+        top: 200px;
+        position: relative; 
+        z-index:1;
+        background-color: #fff7f8;
+        padding: 300px;
+       
+        
+      }
+
+      .div4{
+        margin: auto;
+        width: auto;
+        top: -200px;
+        position: relative;
+         
+        z-index:1;
+    }
+      
+      .top-section {
+      background-color: #fff7f8;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: -1;
+      top: -100px;
+      position: relative;
+    }
+
+    .curved-section {
+      background-color: black;
+      color: ;
+      border-color: black;
+      height: 1000px;
+      width: 110%;
+      margin-left:-100px;
+      position: relative;
+      z-index: -1;
+      top: -100px;
+      
+    }
+
+    .curved-section::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 0;
+      right: 0;
+      height: 200px;
+      
+      background-color:#fff7f8;
+      border-radius: 400%;
+    
+     
+      
+    }
+
+    .content {
+      position: relative;
+      z-index: -1;
+      text-align: center;
+    }
+
+    .p5{
+      color:gold;
+      top: 220px;
+      font-size: 2em;
+      position: relative;
+      background: -webkit-linear-gradient(gold, white);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+     .topp-section {
+      background-color: black;
+      color: white;
+      height: 200px;
+      display: flex;
+      margin-left:-40px;
+      margin-right:-40px;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      top:-400px;
+    }
+
+    .curvedd-section {
+      background-color: white;
+      height: 1200px;
+      position: relative;
+      z-index: -1;
+      
+    }
+
+    .topp-section::after {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background-color: white;
+      border-radius: 100%;
+    }
+
+    .content {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+
+
+     .container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .card {
+    width: 550px;
+    left:70px;
+    padding: 90px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    position:relative;
+    top:-1100px;
+  }
+  .zomato {
+    background-color: #ffe6e6;
+  }
+  .blinkit {
+    background-color: #fff5cc;
+  }
+  .district {
+    background-color: #e6e6ff;
+  }
+  .hyperpure {
+    background-color: #ffe6e6;
+  }
+  .imgg {
+    width: 1400px;
+    height: 80px;
+    margin-bottom: 15px;
+  }
+  h3 {
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  a {
+    color: #000000ff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+    .cardd{
+    width: 1200px;
+    height: 300px;
+    left:70px;
+    padding: 100px;
+    border-radius: 15px;
+    
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    position:relative;
+    top:-700px;
+    color:black;
+  }
+
+  .phone{
+    background-color: #cca5a5ff ;
+    display:fixed;
+  }
+
+     .div5{
+        
+        width: 100%;
+        padding-top:10px;
+        padding-bottom:190px;
+        height:60%;
+        top: 5300px;
+        left:0;
+        position: absolute;
+        background-color:black;
+        color:white;
+        display:fixed;
+        overflow-y:hidden;
+        overflow-x:hidden;
+    }
+
+  .footer {
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-around;
+      text-align:left;
+    }
+
+    .footer h3 {
+      margin-bottom: 40px;
+      font-size: 1.2rem;
+    }
+
+    .footer ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .footer li {
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .social-links img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .app-links img {
+      width: 150px;
+      margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+      text-align: left;
+      font-size: 0.8rem;
+      margin-top: 50px;
+      color: gray;
+    }
+    
+    </style>
+</head>
+<body>
+  
+  <div>
+    <h1 > zomato </h1>
+    <br>
+    <img src = "z1.png" width="100%" height="100%" style="position: absolute; top: 0; left: 0; z-index: -1;">
+    <p class= "p1" style="font-size: 3.5em; font-weight: bold;" >India's #1 <br >food delivery app</p><br>
+    <p class="p1" style="top:40px ; font-size: 1.5em; font-weight: bold;  ">Experience fast & easy online ordering<br>on the Zomato app</p>
+    <tr>
+      <div id="zoom">
+        <img src ="z2.png" width="280px" height="80px" style="position: relative; top: 50px; left: 0px; z-index: -1; overflow: hidden;">
+        <img src="z3.png" width="280px" height="80px" style="position: relative; top: 50px; left: 20px; z-index: -1; overflow: hidden;">
+      </div>
+  </tr>
+  </div>
+<br><br><br><br><br><br><br><br><br><br><br>
+  <div class="div2">
+     <img src="z4.png" width="100%" height="1000px" style="position: absolute; top: 700px; left: 1000; z-index: -1; overflow-y: hidden; overflow-x: hidden;">
+     <img src="z4.png" width="100%" height="1000px" style="position: absolute; top: 870px; left: -1000; z-index: -1; overflow-y: hidden; overflow-x: hidden;">
+     <img src="b.png" width="200px" height="200px" style="position: absolute; top: 1050px; left: 260px;  z-index: -1; overflow: hidden;">
+     <img src="p.png" width="200px" height="200px" style="position: absolute; top: 1150px; right: 250px;  z-index: -1; overflow: hidden;">
+     <img src="ice.png" width="200px" height="200px" style="position: absolute; top: 900px; right: 390px;  z-index: -1; overflow: hidden;">
+     <img src="box.png" width="1000px" height="150px" style="position: absolute; top: 1500px; right: 230px;  z-index: -1; overflow: hidden;">
+
+    <p class="p2">Better food for <br> more people</p>
+    <p class="p3">For over a decade, we've enabled our <br> customers to discover new tastes,<br> delivered right to their doorstep</p>
+   
+    <br><br><br><br><br><br><br><br><br><br><br>
+  </div>
+
+  <div class="div3">
+    <p class="p2" style="top:-250px; position:relative;"  >What's waiting for you <br> on the app? </p>
+    <p class="p3" style="top:-250px; position:relative;">Our app is packed with features that <br>enable you to experience food <br> delivery like never before </p>
+    <img src="phone.png" width="1000px" height="400px" style="position:relative; top: -200px; left: -50px">
+  </div>
+ 
+  <div class="div4">
+      <div class="top-section">
+        <h1 style="color:balck">White Section</h1>
+      </div>
+      <div class="curved-section">
+        <div class="content">
+          <img src="gold.png" width="350px" height="150px" style="position:relative; top: 200px; left: 200px">
+          <img src="g1.png" width="200px" height="200px" style="position:relative; top: 50px; right: 700px">
+          <img src="g2.png" width="200px" height="200px" style="position:relative; top: 40px; left: 350px; ">
+          <img src="black1.png" width="700px" height="400px" style="position:absolute; top: 500; left: 0; z-index: -1;">
+          <img src="black2.png" width="700px" height="400px" style="position:absolute; top: 500; right: 0; z-index: -1;">
+          <p class="p5" > India's top savings <br> Program for Food Lovers </p>
+          <h2 style="font-size: 3em; font-weight: bold; color:white; top:230px; position:relative; ">Gold Benifits</h2>
+          <br><br>
+          
+            <p style="font-size: 2em;  color:white; top:230px; position:relative; right:300px; ">Free Delivery</p>
+            <p class="p5" style="font-size:2em; position:relative; top:200px; right:190px"> at all restaurents aroud 7 km </p>
+            <p style="font-size: 2em;  color:white; top:90px; position:relative; left:300px ">Upto 30% extra off</p>
+            <p class="p5" style="font-size:1.8em; position:relative; top:70px; left:360px"> At 20,000+ partner restaurents </p>
+        </div>
+      </div>
+    </div>
+
+<div class="topp-section">
+  </div>
+  <div class="curvedd-section">
+    <div class="content">
+      <img src="e.png" width="300px" height="200px" style="position:relative; top: -400; left: -10; z-index: 1;">
+      <p style="color:grey; top:-375px; position:relative; font-size:2em; font-weight:bold; " > POWERING INDIA'S <br>CHANGING LIFESTYLES </p>
+    </div>
+  </div>
+
+
+
+<div class="imgg">
+   <div class="container">
+    <div class="card zomato">
+      <img src="z0.png"  width= "100px" height="100px" alt="Zomato Logo">
+      <h3>zomato</h3>
+      <p>Get the app now to start ordering your favorite dishes!</p>
+      <a href="#">Check it out ➜</a>
+    </div>
+    <div class="card blinkit">
+      <img src="bl.png"  width= "100px" height="100px" alt="Blinkit Logo">
+      <h3>blinkit</h3>
+      <p>Choose from 10,000+ products & get them delivered in minutes.</p>
+      <a href="#">Check it out ➜</a>
+    </div>
+    <div class="card district">
+      <img src="di.png" width= "100px" height="100px" alt="District Logo">
+      <h3>district</h3>
+      <p>The best of events, movies, dining, and everything you love!</p>
+      <a href="#">Check it out ➜</a>
+    </div>
+    <div class="card hyperpure">
+      <img src="hy.png"  width= "100px" height="100px" alt="Hyperpure Logo">
+      <h3>hyperpure</h3>
+      <p>Offering complete supply chain solution for your restaurant.</p>
+      <a href="#">Check it out ➜</a>
+    </div>
+  </div>
+</div>
+
+
+ <div>
+   
+    <div class="cardd phone">
+      
+      <h2 style="font-size:2.5em;  left:-400px; position:relative; font-weight:bold; " >Download the app now!</h3>
+      <p style="font-size:1.3em;  left:-400px; position:relative; font-weight:bold;  ">Experience seamless online ordering<br> only on the Zomato app</p>
+      <img src ="z2.png" width="200px" height="60px" style="position: relative; top: -250px; left: -200px; z-index: 1; overflow: hidden;">
+      <img src="z3.png" width="200px" height="60px" style="position: relative; top: -250px; left: -200px; z-index: 1; overflow: hidden;">
+      <img src="phone1.png" width="400px" height="400px" style="position: relative; top: -177px; left: 200px; z-index: 1; overflow: hidden;">
+      <p style="font-size:1.2em; top:200px; left:1010px; position:absolute; font-weight:bold; z-index:1; ">Scan the QR code to <br> download the app</p>
+      <img src="qr.png" width="200px" height="200px" style="position: absolute; top: 280px; left: 1000px; z-index: 1; overflow: hidden;">
+
+    </div>
+
+</div>
+<div class="div5"> 
+  <h2 style="font-size:2em; font-style:italic;text-align:left; left:100px; position:absolute;"  >Zomato</h2><br><br> 
+<footer class="footer">
+    <div>
+      <h3>Eternal</h3>
+      <ul style="text-align:left;" >
+        <li>Zomato</li>
+        <li>Blinkit</li>
+        <li>District</li>
+        <li>Hyperpure</li>
+        <li>Feeding India</li>
+        <li>Investor Relations</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>For Restaurants</h3>
+      <ul style="text-align:left;">
+        <li>Partner With Us</li>
+        <li>Apps For You</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>For Delivery Partners</h3>
+      <ul style="text-align:left;">
+        <li>Partner With Us</li>
+        <li>Apps For You</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Learn More</h3>
+      <ul style="text-align:left;">
+        <li>Privacy</li>
+        <li>Security</li>
+        <li>Terms of Service</li>
+        <li>Help & Support</li>
+        <li>Report a Fraud</li>
+        <li>Blog</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Social Links</h3>
+      <div class="social-links" >
+        <img src="linkedin.svg" style="background-color:white;" alt="LinkedIn">
+        
+        <img src="instagram.svg" style="background-color:white;" alt="Instagram">
+        <img src="youtube.svg" style="background-color:white;" alt="YouTube">
+        <img src="facebook.svg"  style="background-color:white;" alt="Facebook">
+        <img src="twitter-x.svg" style="background-color:white;" alt="X">
+      </div>
+      <div class="app-links">
+        <img src="z2.png" width="400px" height="49px" alt="App Store">
+        <img src="z3.png" alt="Google Play">
+      </div>
+    </div>
+  </footer>
+</div>
+
+  <div class="footer-bottom" style="color:white; position:absolute; top:5600px; left:300px;">
+    By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy, and Content Policies. All trademarks are properties of their respective owners.<br>
+    2008-2025 © Zomato™ Ltd. All rights reserved.
+  </div>
+
+
+
+
+
+</body>
+</html>
+    
+
+
+
+
+
+
+
+

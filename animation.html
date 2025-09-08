@@ -1,0 +1,67 @@
+<html>
+    <head>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <style>
+            .div1{
+                width:100px;
+                height: 100px;
+                background-color: blue;
+                animation-name: example;
+                animation-duration: 4s;
+            }
+
+            @keyframes example{
+                from {background-color: aqua;}
+                to {background-color: black;}
+            }
+
+
+            .div2{
+                width:50px;
+                height:30px;
+                background:red;
+                position:relative;
+                animation: mymoves 5s infinite;
+                animation-timing-function:cubic-bezier(0.05,0.02,0.165,1);
+                
+                
+            }
+
+            @keyframes mymoves{
+                from { left: 0px; }
+                to { left: 1000px; }
+            }
+
+            .animationjello{
+                color:blue;
+                animation:jello;
+                animation-duration: 5s;
+                --animate-delay:10s;
+                
+                
+            }
+
+            :root {
+                --animate-duration: 2s;
+                --animate-repeat: 2;
+            }
+
+        </style>
+    </head>
+    <body>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <div class="div1"></div>
+    <br><br>
+    <div class="div2">UwW</div>
+    <br><br>
+    <h1 class="animate__animated animate__flash">An animated element</h1>
+    <h1 class="animate__animated animate__heartBeat">An animated element</h1>
+    <h1 class="animate__animated animate__bounce">An animated element</h1>
+    <h1 class="animate__animated animate__pulse ">An animated element</h1>
+    <h1 class="animationjello">An animated element</h1>
+
+</body>
+</html>
+
