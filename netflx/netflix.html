@@ -11,9 +11,10 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-
-
-            background-color: #141414;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #000000ff;
             color: white;
             overflow-x: hidden;  
 overflow-y: scroll;   
@@ -37,7 +38,7 @@ overflow-y: scroll;
   z-index: 1;
   border: none;             
   outline: none;         
-  margin-left: -10px;
+  margin-left: 10px;
   margin-top: -10px;
   text-shadow: 101px 101px 101px black;
 }
@@ -53,25 +54,22 @@ overflow-y: scroll;
   filter: blur(8px);
   z-index: -1;
 }
-
-
-
-        .btn{
-            background-color: #e50914;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            align-self: flex-end;
-            align-items: center;
-            position: relative;
-            text-shadow: 2px 2px 5px black;
-            cursor: pointer;
+.btn{
+    background-color: #e50914;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    align-self: flex-end;
+    align-items: center;
+    position: relative;
+    text-shadow: 2px 2px 5px black;
+    cursor: pointer;
         
-        }
-
+  }
+        
  .textbox {
   padding: 16px 200px;
   border: 1px solid #312d2dff;
@@ -88,83 +86,24 @@ overflow-y: scroll;
 .textbox::placeholder {
   
   
-  color: #ffffffff;
+color: #ffffffff;
  position: relative;
- left:-180px ;    /* ✅ aligns placeholder to left */
+ left:-180px ;    
 }
-
 
 .dropdown{
-            padding: 5px 10px;
-            border: 3px solid #ffffffff;
-            border-radius: 5px;
-            font-size: 16px;
-            margin-right: 10px;
-            align: center;
-            background-color: #000000ff;
-            color: white;
-            cursor: pointer;
-            
-            
-        }
-
-
-
-.trending {
-  padding: 40px;
-  width: 100%;
-
-  margin-left: -14px;
-  background: #000;
-  color: #fff;
-}
-
-.trending h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  font-weight: bold 20px; 
-}
-
-.slider {
-  position: relative;
-  justify-content: center;
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  overflow-y: hidden;
-}
-
-.slide {
-  position: relative;
-  flex: 0 0 auto;
-  width: 200px;
-  height: 260px;
-  border-radius: 8px;
-  overflow: hidden;
-  scroll-snap-align: start;
-  transition: transform 0.3s ease;
-  left: 20px;
-  
-}
-.slide:hover {
-  transform: scale(1.1);
-}
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.rank {
-  position: absolute;
-  bottom: 10px;
-  left: 0px;
-  font-size: 60px;
-  font-weight: bold;
+  padding: 5px 10px;
+  border: 3px solid #ffffffff;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 10px;
+  align: center;
+  background-color: #000000ff;
   color: white;
-}
+  cursor: pointer;
+}          
+            
+
 
 .more-reasons {
   padding: 80px 120px;
@@ -192,24 +131,24 @@ overflow-y: scroll;
   margin: 0 auto;
 }
 
-.card{
+.cardd{
   background: linear-gradient(to right, #203d55ff, #583d7dff);
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   line-height: .1;
   height: 300px;
-  display: flex;
+
 }
 
-.card h3 {
+.cardd h3 {
   font-size: 20px;
   line-height: 1.1;
   font-weight: 400;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.card p {
+.cardd p {
   font-size: 16px;  
   line-height: 1.5;
   margin-top: 10px;
@@ -285,13 +224,12 @@ overflow-y: scroll;
 }
 
 .collapsible {
-width: 940px;
-height:70px;
-cursor: pointer;
-border: none;
-margin-bottom: 20px;
+  width: 940px;
+  height: 70px;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 20px;
   text-align: left;
-
   color: white;
   padding: 20px;
   background-color: #222;
@@ -301,42 +239,216 @@ margin-bottom: 20px;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  text-align: left;
   font-size: 27px;
   font-weight: 500;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   display: flex;
   align-items: center;
-
+  scroll-behavior: smooth;
+  transition: background 0.3s ease;
 }
-
-
 
 .content {
-  padding: 0 17px;
-  display: none;
+  max-height: 0;
+  opacity: 0;
   overflow: hidden;
-  background-color: #222;
-  max-width : 910px;
-max-height:300px;
-cursor: pointer;
-border: none;
-position:relative;
+  background-color: #1b1919ff;
+  max-width: 910px;
+  cursor: pointer;
+  border: none;
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: -20px;
+  padding: 0 17px;
+  transition: max-height 0.6s ease, opacity 0.4s ease;
 }
 
+.content.show {
+  max-height: 300px; 
+  opacity: 1;
+}
 
 .content p {
-  margin: 15px 10px 10px 10px;
+  margin: 15px 10px;
   text-align: left;
   font-size: 26px;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
-  gap: 100px;
+  transform: translateY(-10px);
+  transition: transform 0.6s ease;
 }
-    </style>
+
+.content.show p {
+  transform: translateY(0);
+}
+
+
+.button2 {
+  background-color: #0f0e0e;
+  color: white;
+  border: 1px solid #262424;
+  padding: 40px 8px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 25px;
+  align-self: flex-end;
+  align-items: center;
+  position: relative;
+  text-shadow: 2px 2px 5px black;
+  top: 270px;
+  left: 180px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.button2:hover {
+  background-color: #262424;
+  transform: scale(1.08);
+}
+
+
+.trend {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+.carousel-container {
+  width: 1120px;
+  margin: 50px auto;
+  position: relative;
+  border-left-width: 14px;
+  
+  
+}
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 95%;
+  }
+}
+.inner-carousel {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+.track {
+  display: inline-flex;
+  height: 100%;
+  transition: transform 0.8s ease;
+}
+.card-container {
+  width: 275px;
+  height: 400px;
+  flex-shrink: 0;
+  padding-right: 10px;
+}
+@media (max-width: 768px) {
+  .card-container {
+    width: 184px;
+  }
+}
+.card {
+  width: 100%;
+  height: 100%;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;*/
+  background-position: center bottom;
+  background-size: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  background-size: cover;
+}
+.card1 {
+  background-image: url("poster.jpg");
+
+}
+.card2 {
+  background-image: url("poster.jpg");
+}
+.card3 {
+  background-image: url("poster.jpg");
+}
+.card4 {
+  background-image: url("poster.jpg");
+}
+.card5 {
+  background-image: url("poster.jpg");
+}
+.card6 {
+  background-image: url("poster.jpg");
+}
+.card7 {
+  background-image: url("poster.jpg");
+}
+.card8 {
+  background-image: url("poster.jpg");
+}
+.card9 {
+  background-image: url("poster.jpg");
+}
+.card10 {
+  background-image: url("poster.jpg");
+}
+.card11 {
+  background-image: url("poster.jpg");
+}
+.card12 {
+  background-image: url("poster.jpg");
+}
+
+.nav button {
+  position: absolute;
+  top: 50%;
+  transform: translatey(-50%);
+  width: 30px;
+  height: 100px;
+  border-radius: 23px;
+  outline: none;
+  border: 1px solid #000;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 18px;
+}
+.nav .prev {
+  left: -30px;
+  display: none;
+}
+.nav .prev.show {
+  display: block;
+}
+.nav .next {
+  right: -30px;
+}
+.nav .next.hide {
+  display: none;
+}
+
+.card-container {
+  position: relative;
+  display: inline-block;
+}
+
+.rank {
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  font-size: 60px;
+  font-weight: 900;
+  color: white;
+  text-shadow: 113px 113px 116px rgba(10, 10, 10, 10.8);
+  font-family: Arial, sans-serif;
+  line-height: 1;
+}
+
+</style>
+
+
 
 <script>
 var coll = document.getElementsByClassName("collapsible");
@@ -380,45 +492,78 @@ for (i = 0; i < coll.length; i++) {
                 <button class="btn">Get Started</button>
             </div>
         </section>
-        
-<section class="trending">
-  <h2 style="position: relative; left: 250px; font-size: 32px; font-weight:400px; ">Trending Now</h2><br>
-  <div class="slider">
-    <div class="slide">
-      <span class="rank">1</span>
-      <img src="poster.jpg" alt="Wednesday">
+      
+<section>   
+<div class="trend">     
+  <div class="carousel-container">
+    <div class="inner-carousel">
+      <div class="track">
+        <div class="card-container"><div class="card card1"></div><span class="rank">1</span></div>
+        <div class="card-container"><div class="card card2"></div><span class="rank">2</span></div>
+        <div class="card-container"><div class="card card3"></div><span class="rank">3</span></div>
+        <div class="card-container"><div class="card card4"></div><span class="rank">4</span></div>
+        <div class="card-container"><div class="card card5"></div><span class="rank">5</span></div>
+        <div class="card-container"><div class="card card6"></div><span class="rank">6</span></div>
+        <div class="card-container"><div class="card card7"></div><span class="rank">7</span></div>
+        <div class="card-container"><div class="card card8"></div><span class="rank">8</span></div>
+        <div class="card-container"><div class="card card9"></div><span class="rank">9</span></div>
+        <div class="card-container"><div class="card card10"></div><span class="rank">10</span></div>
+        <div class="card-container"><div class="card card11"></div><span class="rank">11</span></div>
+        <div class="card-container"><div class="card card12"></div><span class="rank">12</span></div>
+      </div>
+
+      <div class="nav">
+        <button class="prev"><i class="fas fa-arrow-left fa-2x"></i><</button>
+        <button class="next"><i class="fas fa-arrow-right fa-2x"></i>></button>
+      </div>
     </div>
-    <div class="slide">
-      <span class="rank">2</span>
-      <img src="poster.jpg" alt="The Great Indian Kapil Show">
-    </div>
-    <div class="slide">
-      <span class="rank">3</span>
-      <img src="poster.jpg" alt="Kingdom">
-    </div>
-    <div class="slide">
-      <span class="rank">4</span>
-      <img src="poster.jpg" alt="Raid 2">
-    </div>
-    <div class="slide">
-      <span class="rank">5</span>
-      <img src="poster.jpg" alt="Maareesan">
-    </div>
- 
   </div>
+</div>
+
+
+<script>
+  const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+const carousel = document.querySelector(".carousel-container");
+const track = document.querySelector(".track");
+let width = carousel.offsetWidth;
+let index = 0;
+window.addEventListener("resize", function () {
+  width = carousel.offsetWidth;
+});
+next.addEventListener("click", function (e) {
+  e.preventDefault();
+  index = index + 1;
+  prev.classList.add("show");
+  track.style.transform = "translateX(" + index * -width + "px)";
+  if (track.offsetWidth - index * width < index * width) {
+    next.classList.add("hide");
+  }
+});
+prev.addEventListener("click", function () {
+  index = index - 1;
+  next.classList.remove("hide");
+  if (index === 0) {
+    prev.classList.remove("show");
+  }
+  track.style.transform = "translateX(" + index * -width + "px)";
+});
+</script>
+
+
 </section>
 
 <section class="more-reasons">
   <h2 style="position: relative; left: -350px;">More reasons to join</h2>
   <div class="reasons-grid">
-    <div class="card">
+    <div class="cardd">
       <h3>Enjoy on your TV</h3>
       <p>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
       <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/netflix.svg" width="50" alt="Netflix" style="position: relative; left:80px; bottom: -30px;">
     </div>
 
     <div class="reasons-grid">
-    <div class="card">
+    <div class="cardd">
       <h3>Download your shows to watch offline</h3>
       <p>Save your favourites easily and always have something to watch.</p>
       <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/netflix.svg" width="50" alt="Netflix" style="position: relative; left:80px; bottom: -10px;"> 
@@ -427,7 +572,7 @@ for (i = 0; i < coll.length; i++) {
   </div>
 
     <div class="reasons-grid">
-    <div class="card">
+    <div class="cardd">
 
       <h3>Watch everywhere</h3>
       <p>Stream unlimited movies and TV shows on your phone, tablet, laptop and TV.</p>
@@ -437,7 +582,7 @@ for (i = 0; i < coll.length; i++) {
   </div>
 
 <div class="reasons-grid">
-    <div class="card">
+    <div class="cardd">
       <h3>Create profiles for kids</h3>
       <p>Send kids on adventures with their favourite characters in a space made just for them — free with your membership.</p>
       <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/netflix.svg" width="50" alt="Netflix" style="position: relative; left:80px; bottom: 10px;">
@@ -479,20 +624,21 @@ for (i = 0; i < coll.length; i++) {
 
 <script>
 var coll = document.getElementsByClassName("collapsible");
-var i;
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
+for (let i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
     this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
+
+    let content = this.nextElementSibling;
+    if (content.classList.contains("show")) {
+      content.classList.remove("show");
     } else {
-      content.style.display = "block";
+      content.classList.add("show");
     }
   });
 }
 </script>
+
 
    
  </div>
