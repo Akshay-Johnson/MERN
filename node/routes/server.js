@@ -9,8 +9,10 @@ const server = http.createServer((req, res) => {
                 <head><title>Home Page</title></head>
                 <body>
                     <h1>Welcome to the Home Page</h1>
+                    <ul></ul>
                     <p>About</p>
                     <p>Contact</p>
+                    </ul>
                 </body>
             </html>
         `);
