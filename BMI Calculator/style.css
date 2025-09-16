@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+@media (max-width: 768px) {
+    .content {
+        padding: 0 20px;
+    }
+
+    .input label {
+        font-size: 1rem;
+    }
+
+    button#calculate {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .result {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .box {
+        border-radius: 20px;
+    }
+}
+
+
+
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4aa1dc, #8616b3);
+    height: 100vh;
+    overflow: auto;
+    min-height: 100%;
+
+}
+
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box{
+    max-width: 400px;
+    width:90%;
+    background: #fff;
+    border-radius: 38px;
+    text-align: center;
+    position: relative;
+
+}
+
+.box::before{
+    content: '';
+    position: absolute;
+    height: 110%;
+    width: 110%;
+    left:-5%;
+    top:-5%;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 25px 45px rgba(0,0,0,0.15);
+    border-radius: 60px;
+    z-index: -1;
+}
+
+h1{
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 600;
+    padding: 20px 0;
+    color: #333;
+}   
+
+.content{
+    padding: 0px 40px;
+}
+
+.input{
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    border-radius: 30px;
+    padding: 10px 30px;
+    margin-bottom: 20px;
+
+}
+
+.input input{
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    font-size:1rem;
+}
+
+.input label{
+    display:block;
+    font-size: 20px;
+    font-weight: 500;
+    color:black;
+    margin-bottom: 10px;
+
+}
+
+.input input{
+    outline:none;
+    border:none;
+    border-radius: 1px solid #2d8e50;
+    width: 60%;
+    text-align: center;
+    font-size: 18px;
+}
+
+button#calculate{
+    font-family: "nunito", sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #4aa1dc, #8616b3);
+    font-size: 20px;
+    border-radius: 13px;
+    padding: 10px 20px;
+    width: 100%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+button#calculate:hover{
+    background: linear-gradient(135deg, #8616b3, #4aa1dc);  
+}
+
+.result{
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 900;
+    color: #333;
+}
+
+.result h2{
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #000000;
+}
+
+.result #result{
+    color:blue;
+    display: inline-block;
+}
+
+.comment{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-bottom:20px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+
+#comment{
+    margin-top: 1px;
+    margin-bottom: 20px;
+    padding: 20px 10px;
+    font-size: 15px;
+    color: #38a057;
+    font-weight: 900;
+    
+}
