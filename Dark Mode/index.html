@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Side Bar and Dark Mode</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  
+    <div class="container">
+    <!-- Top Navbar -->
+    <nav class="site-nav">
+      <button class="sidebar-toggle">
+        <span class="material-symbols-rounded">menu</span>
+      </button>
+    </nav>
+
+    <!-- Page Content -->
+    <main class="main-content">
+      <h1 class="page-title">Welcome to the Dashboard</h1>
+      <p class="card">This is a sample dashboard content area. You can add your own content here.</p>
+    </main>
+  </div>
+
+  <!-- Sidebar FIRST (so it stays aligned to top) -->
+  <aside class="sidebar collapsed">
+    <header class="sidebar-header">
+      <img src="meme-cat.png" alt="Logo" class="header-logo">
+      <button class="sidebar-toggle">
+        <span class="material-symbols-rounded">chevron_left</span>
+      </button>
+    </header>
+
+    <div class="sidebar-content">
+      <form action="#" class="search-form">
+        <span class="material-symbols-rounded">search</span>
+        <input type="search" placeholder="Search..." required />
+      </form>
+
+      <ul class="menu-list">
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <span class="material-symbols-rounded">dashboard</span>
+            <span class="menu-label">Dashboard</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <span class="material-symbols-rounded">notifications</span>
+            <span class="menu-label">Notifications</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <span class="material-symbols-rounded">settings</span>
+            <span class="menu-label">Settings</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <span class="material-symbols-rounded">help</span>
+            <span class="menu-label">Help</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <span class="material-symbols-rounded">logout</span>
+            <span class="menu-label">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-footer">
+      <button class="theme-toggle">
+        <div class="theme-label">
+          <span class="theme-icon material-symbols-rounded">dark_mode</span>
+          <span class="theme-text">Dark Mode</span>
+        </div>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content Wrapper -->
+  
+
+</body>
+</html>
