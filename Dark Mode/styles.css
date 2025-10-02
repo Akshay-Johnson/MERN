@@ -293,7 +293,7 @@ body.dark-theme .theme-toggle-track {
 
 }
 
-body.dark-theme .theme-toggle-indicator .theme.{
+body.dark-theme .theme-toggle-indicator{
     transform: translateX(24px);
 }
 
