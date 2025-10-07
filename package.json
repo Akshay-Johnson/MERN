@@ -16,6 +16,7 @@
     "detect-libc": "^2.0.4",
     "end-of-stream": "^1.4.5",
     "expand-template": "^2.0.3",
+    "express": "^5.1.0",
     "fs-constants": "^1.0.0",
     "github-from-package": "^0.0.0",
     "ieee754": "^1.2.1",
