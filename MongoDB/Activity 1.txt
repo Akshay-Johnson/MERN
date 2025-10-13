@@ -1,3 +1,28 @@
+1.Find employees who work in the IT department.
+2.Find employees who are in HR or IT, and have salary ≥ 40000.
+3.Find employees whose age ≤ 26 and department is not HR.
+4.Find employees whose salary is between 35000 and 55000.
+5.Find employees whose department is Sales or Marketing, but age < 25.
+6.Find employees whose salary is not in [30000, 40000, 60000].Find the employee whose salary equals 40000.
+7.Find employees whose age is 26 or older.
+8.Find employees whose salary is 45000 or higher.
+9.Find all employees whose salary is not 35000.
+10.Find all employees whose age is not 25.
+11.Find employees whose salary is 38000 or less.
+12.Find employees whose age is 24 or younger.
+13.Find employees who work in either IT or Sales.
+14.Find employees who work in IT and have a salary greater than 50000.
+15.Find employees whose age is greater than 25 and less than 30.
+16.Find employees who are in HR and age ≥ 28.
+17.Find employees whose age is 22, 25, or 30.
+18.Find employees whose salary is less than 35000 or greater than 50000.
+19.Find employees whose salary is not less than 40000.
+20.Find employees whose department is not equal to IT.Find employees whose age is 22 or department is HR.
+21.Find employees whose age is not 25 and salary is not 45000.
+22.Find employees who are neither in IT nor have salary > 40000.
+
+
+
 companyDB> db.employees.insertMany([{ name: "Ali", age: 25, department: "IT", salary: 45000}, { name: "Sara", age: 28, department: "HR", salary: 40000}, { name: "John", age: 22, department: "Sales", salary: 35000}, { name: "Mary", age: 30, department: "IT", salary: 55000}, { name: "Tom", age: 26, department: "Marketing", salary: 38000}, { name: "Lina", age: 24, department: "Sales", salary: 30000}, { name: "David", age: 32, department: "HR", salary: 60000}])
 {
   acknowledged: true,
