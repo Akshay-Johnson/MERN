@@ -1,0 +1,677 @@
+companyDB> db.employees.insertMany([{ name: "Ali", age: 25, department: "IT", salary: 45000}, { name: "Sara", age: 28, department: "HR", salary: 40000}, { name: "John", age: 22, department: "Sales", salary: 35000}, { name: "Mary", age: 30, department: "IT", salary: 55000}, { name: "Tom", age: 26, department: "Marketing", salary: 38000}, { name: "Lina", age: 24, department: "Sales", salary: 30000}, { name: "David", age: 32, department: "HR", salary: 60000}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('68ea84db948635f6b7cebea4'),
+    '1': ObjectId('68ea84db948635f6b7cebea5'),
+    '2': ObjectId('68ea84db948635f6b7cebea6'),
+    '3': ObjectId('68ea84db948635f6b7cebea7'),
+    '4': ObjectId('68ea84db948635f6b7cebea8'),
+    '5': ObjectId('68ea84db948635f6b7cebea9'),
+    '6': ObjectId('68ea84db948635f6b7cebeaa')
+  }
+}
+
+//question 1 
+
+companyDB> db.employees.find({department:{$eq:"IT"}})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea4'),
+    name: 'Ali',
+    age: 25,
+    department: 'IT',
+    salary: 45000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea7'),
+    name: 'Mary',
+    age: 30,
+    department: 'IT',
+    salary: 55000
+  }
+]
+
+//question 2 
+
+companyDB> db.employees.find({department:{$in:["HR","IT"]} ,salary:{$gte:40000}})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea4'),
+    name: 'Ali',
+    age: 25,
+    department: 'IT',
+    salary: 45000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea5'),
+    name: 'Sara',
+    age: 28,
+    department: 'HR',
+    salary: 40000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea7'),
+    name: 'Mary',
+    age: 30,
+    department: 'IT',
+    salary: 55000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebeaa'),
+    name: 'David',
+    age: 32,
+    department: 'HR',
+    salary: 60000
+  }
+]
+
+//question 3 
+
+companyDB> db.employees.find({age:{$lte:26},department:{$ne:"HR"}})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea4'),
+    name: 'Ali',
+    age: 25,
+    department: 'IT',
+    salary: 45000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea6'),
+    name: 'John',
+    age: 22,
+    department: 'Sales',
+    salary: 35000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea8'),
+    name: 'Tom',
+    age: 26,
+    department: 'Marketing',
+    salary: 38000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea9'),
+    name: 'Lina',
+    age: 24,
+    department: 'Sales',
+    salary: 30000
+  }
+]
+
+//question 4 
+
+companyDB> db.employees.find({salary:{$gt:35000,$lt:55000}})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea4'),
+    name: 'Ali',
+    age: 25,
+    department: 'IT',
+    salary: 45000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea5'),
+    name: 'Sara',
+    age: 28,
+    department: 'HR',
+    salary: 40000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea8'),
+    name: 'Tom',
+    age: 26,
+    department: 'Marketing',
+    salary: 38000
+  }
+]
+
+// question 5
+
+
+companyDB> db.employees.find({department:{$in:["Sales","Marketing"]},age:{$lt:25}})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea6'),
+    name: 'John',
+    age: 22,
+    department: 'Sales',
+    salary: 35000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea9'),
+    name: 'Lina',
+    age: 24,
+    department: 'Sales',
+    salary: 30000
+  }
+]
+
+//question 6
+
+companyDB> db.employees.find({$or:[ {salary:{$nin:[30000,40000,60000]}} ,{salary:40000}   ]  })
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea4'),
+    name: 'Ali',
+    age: 25,
+    department: 'IT',
+    salary: 45000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea5'),
+    name: 'Sara',
+    age: 28,
+    department: 'HR',
+    salary: 40000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea6'),
+    name: 'John',
+    age: 22,
+    department: 'Sales',
+    salary: 35000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea7'),
+    name: 'Mary',
+    age: 30,
+    department: 'IT',
+    salary: 55000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea8'),
+    name: 'Tom',
+    age: 26,
+    department: 'Marketing',
+    salary: 38000
+  }
+]
+
+//question 7
+companyDB> db.employees.find({age:{$gte:26}})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea5'),
+    name: 'Sara',
+    age: 28,
+    department: 'HR',
+    salary: 40000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea7'),
+    name: 'Mary',
+    age: 30,
+    department: 'IT',
+    salary: 55000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea8'),
+    name: 'Tom',
+    age: 26,
+    department: 'Marketing',
+    salary: 38000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebeaa'),
+    name: 'David',
+    age: 32,
+    department: 'HR',
+    salary: 60000
+  }
+]
+
+//question 8
+
+companyDB> db.employees.find({salary:{$gte:45000}})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea4'),
+    name: 'Ali',
+    age: 25,
+    department: 'IT',
+    salary: 45000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea7'),
+    name: 'Mary',
+    age: 30,
+    department: 'IT',
+    salary: 55000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebeaa'),
+    name: 'David',
+    age: 32,
+    department: 'HR',
+    salary: 60000
+  }
+]
+
+//question 9
+
+companyDB> db.employees.find({salary:{$ne:35000}})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea4'),
+    name: 'Ali',
+    age: 25,
+    department: 'IT',
+    salary: 45000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea5'),
+    name: 'Sara',
+    age: 28,
+    department: 'HR',
+    salary: 40000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea7'),
+    name: 'Mary',
+    age: 30,
+    department: 'IT',
+    salary: 55000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea8'),
+    name: 'Tom',
+    age: 26,
+    department: 'Marketing',
+    salary: 38000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea9'),
+    name: 'Lina',
+    age: 24,
+    department: 'Sales',
+    salary: 30000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebeaa'),
+    name: 'David',
+    age: 32,
+    department: 'HR',
+    salary: 60000
+  }
+]
+
+//question 10 
+
+companyDB> db.employees.find({age:{$ne:25}})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea5'),
+    name: 'Sara',
+    age: 28,
+    department: 'HR',
+    salary: 40000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea6'),
+    name: 'John',
+    age: 22,
+    department: 'Sales',
+    salary: 35000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea7'),
+    name: 'Mary',
+    age: 30,
+    department: 'IT',
+    salary: 55000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea8'),
+    name: 'Tom',
+    age: 26,
+    department: 'Marketing',
+    salary: 38000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea9'),
+    name: 'Lina',
+    age: 24,
+    department: 'Sales',
+    salary: 30000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebeaa'),
+    name: 'David',
+    age: 32,
+    department: 'HR',
+    salary: 60000
+  }
+]
+
+//question 11
+
+companyDB> db.employees.find({salary:{$lte:38000}})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea6'),
+    name: 'John',
+    age: 22,
+    department: 'Sales',
+    salary: 35000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea8'),
+    name: 'Tom',
+    age: 26,
+    department: 'Marketing',
+    salary: 38000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea9'),
+    name: 'Lina',
+    age: 24,
+    department: 'Sales',
+    salary: 30000
+  }
+]
+
+//question 12
+
+companyDB> db.employees.find({age:{$lte:24}})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea6'),
+    name: 'John',
+    age: 22,
+    department: 'Sales',
+    salary: 35000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea9'),
+    name: 'Lina',
+    age: 24,
+    department: 'Sales',
+    salary: 30000
+  }
+]
+
+//question 13
+
+companyDB> db.employees.find({department:{$in:["IT","Sales"]}})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea4'),
+    name: 'Ali',
+    age: 25,
+    department: 'IT',
+    salary: 45000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea6'),
+    name: 'John',
+    age: 22,
+    department: 'Sales',
+    salary: 35000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea7'),
+    name: 'Mary',
+    age: 30,
+    department: 'IT',
+    salary: 55000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea9'),
+    name: 'Lina',
+    age: 24,
+    department: 'Sales',
+    salary: 30000
+  }
+]
+
+//question 14
+
+companyDB> db.employees.find({$and:[{department:"IT"},{salary:{$gt:50000}}  ]})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea7'),
+    name: 'Mary',
+    age: 30,
+    department: 'IT',
+    salary: 55000
+  }
+]
+
+//question 15
+
+companyDB> db.employees.find({age:{$gt:25,$lt:35}   })
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea5'),
+    name: 'Sara',
+    age: 28,
+    department: 'HR',
+    salary: 40000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea7'),
+    name: 'Mary',
+    age: 30,
+    department: 'IT',
+    salary: 55000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea8'),
+    name: 'Tom',
+    age: 26,
+    department: 'Marketing',
+    salary: 38000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebeaa'),
+    name: 'David',
+    age: 32,
+    department: 'HR',
+    salary: 60000
+  }
+]
+
+//question 16
+
+companyDB> db.employees.find({$and:[{department:"HR"},{age:{$gte:28}} ]})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea5'),
+    name: 'Sara',
+    age: 28,
+    department: 'HR',
+    salary: 40000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebeaa'),
+    name: 'David',
+    age: 32,
+    department: 'HR',
+    salary: 60000
+  }
+]
+
+//question 17
+
+companyDB> db.employees.find({age:{$in:[22,25,30]}   })
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea4'),
+    name: 'Ali',
+    age: 25,
+    department: 'IT',
+    salary: 45000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea6'),
+    name: 'John',
+    age: 22,
+    department: 'Sales',
+    salary: 35000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea7'),
+    name: 'Mary',
+    age: 30,
+    department: 'IT',
+    salary: 55000
+  }
+]
+
+//question 18
+
+companyDB> db.employees.find({salary:{$gt:35000,$lt:50000}})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea4'),
+    name: 'Ali',
+    age: 25,
+    department: 'IT',
+    salary: 45000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea5'),
+    name: 'Sara',
+    age: 28,
+    department: 'HR',
+    salary: 40000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea8'),
+    name: 'Tom',
+    age: 26,
+    department: 'Marketing',
+    salary: 38000
+  }
+]
+
+//question 19
+
+companyDB> db.employees.find({salary:{$gt:40000}})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea4'),
+    name: 'Ali',
+    age: 25,
+    department: 'IT',
+    salary: 45000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea7'),
+    name: 'Mary',
+    age: 30,
+    department: 'IT',
+    salary: 55000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebeaa'),
+    name: 'David',
+    age: 32,
+    department: 'HR',
+    salary: 60000
+  }
+]
+
+//question 20 
+
+companyDB> db.employees.find({$and:[   { department:{$ne:"IT"}} , {$or:[{age:"22"},{department:"HR"}]}  ]})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea5'),
+    name: 'Sara',
+    age: 28,
+    department: 'HR',
+    salary: 40000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebeaa'),
+    name: 'David',
+    age: 32,
+    department: 'HR',
+    salary: 60000
+  }
+]
+
+//question 21
+
+companyDB> db.employees.find({ age:{$ne:25} , salary:{$ne:45000}    })
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea5'),
+    name: 'Sara',
+    age: 28,
+    department: 'HR',
+    salary: 40000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea6'),
+    name: 'John',
+    age: 22,
+    department: 'Sales',
+    salary: 35000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea7'),
+    name: 'Mary',
+    age: 30,
+    department: 'IT',
+    salary: 55000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea8'),
+    name: 'Tom',
+    age: 26,
+    department: 'Marketing',
+    salary: 38000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea9'),
+    name: 'Lina',
+    age: 24,
+    department: 'Sales',
+    salary: 30000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebeaa'),
+    name: 'David',
+    age: 32,
+    department: 'HR',
+    salary: 60000
+  }
+]
+
+//question 22
+
+companyDB> db.employees.find({ $nor:[  {department:"IT"} , {salary:{$gt:40000}}]})
+[
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea5'),
+    name: 'Sara',
+    age: 28,
+    department: 'HR',
+    salary: 40000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea6'),
+    name: 'John',
+    age: 22,
+    department: 'Sales',
+    salary: 35000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea8'),
+    name: 'Tom',
+    age: 26,
+    department: 'Marketing',
+    salary: 38000
+  },
+  {
+    _id: ObjectId('68ea84db948635f6b7cebea9'),
+    name: 'Lina',
+    age: 24,
+    department: 'Sales',
+    salary: 30000
+  }
+]
