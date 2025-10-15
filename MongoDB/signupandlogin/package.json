@@ -1,0 +1,22 @@
+{
+  "name": "signupandlogin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.3",
+    "dotevn": "^0.0.1-security",
+    "express": "^5.1.0",
+    "mongoose": "^8.19.1"
+  }
+}

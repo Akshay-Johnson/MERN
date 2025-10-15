@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Ethan",
+    "department": "Finance",
+    "salary": 52000,
+    "age": 29
+  },
+  {
+    "name": "Nora",
+    "department": "Marketing",
+    "salary": 47000,
+    "age": 26
+  },
+  {
+    "name": "Leo",
+    "department": "IT",
+    "salary": 61000,
+    "age": 31
+  },
+  {
+    "name": "Ava",
+    "department": "HR",
+    "salary": 44000,
+    "age": 27
+  },
+  {
+    "name": "Mason",
+    "department": "Sales",
+    "salary": 39000,
+    "age": 23
+  },
+  {
+    "name": "Chloe",
+    "department": "Operations",
+    "salary": 58000,
+    "age": 34
+  },
+  {
+    "name": "Ryan",
+    "department": "Support",
+    "salary": 50000,
+    "age": 28
+  }
+]
