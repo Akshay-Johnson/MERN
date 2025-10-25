@@ -1,0 +1,81 @@
+$rename
+
+companyDB> db.employees.updateOne({},  {$rename:{"age":"agee"}}    );
+
+$inc
+
+companyDB> db.employees.updateOne( {name:"David"},  {$inc:{ age:-2}} );
+
+$unset
+
+companyDB> db.employees.updateMany({},{ $unset:{ age:"" }} );
+
+$currentDate
+
+companyDB> db.employees.updateMany( {}, {$currentDate: {lastmodified:true }});
+
+- $type:timestamp
+  	companyDB> db.employees.updateOne({}, { $currentDate: { $name: 'David',$type:"timestamp"  });
+
+$set
+companyDB> db.employees.updateMany( {}, { $set:{ lastmodifiedStr: new Date().toISOString() }});
+
+$addToSet
+
+companyDB> db.employees.updateOne( {name:'Lina'}, {$addToSet: {skillls:"Mongo"} }  );
+
+$push
+
+companyDB> db.employees.updateOne({name:"Tom"}, {$push:{"address":"newyork"}}    );
+
+$pop
+
+companyDB> db.employees.updateOne({name:"Lina"}, {$pop:{skills:1}}    );
+
+$pull
+
+companyDB> db.employees.updateOne({name:"Tom"}, {$pull:{skills:"c"}}    );
+
+
+$regex
+
+productsDB> db.products.find({name:{$regex:/Apple/,$not:/watch/  }});
+
+case sensitive or not 
+
+productsDB> db.products.find( {name: {$regex:/APPLE/i} });
+
+first letter A
+
+productsDB> db.products.find( {name: {$regex:/^A} });
+
+containing word Book
+
+productsDB> db.products.find( {name: {$regex:/Book$/} });
+
+$group
+
+db.users.aggregate([{$group: {_id:"$city",avgSalary: { $avg:"$salary" }  }   }])
+
+$project
+
+userdb> db.users.aggregate([ {$project: {name:1,salary:1,_id:0  }   }])
+
+$lookup
+
+productsDB> db.products.aggregate([{$lookup:{from:"categories",localField:"category",foreignField:"category",as:"category_info"}}   ])
+
+$lookup and $unwind
+
+productsDB> db.products.aggregate([{$lookup:{from:"categories",localField:"category",foreignField:"category",as:"category_info"}},{$unwind:"$category_info"}   ])
+
+$lookup , $unwind , $project
+
+productsDB> db.products.aggregate([{$lookup:{from:"categories",localField:"category",foreignField:"category",as:"category_info"}},{$unwind:"$category_info"},{$project:{name:1,description:1,category:1}}])
+
+productsDB> db.products.aggregate([{$lookup:{from:"categories",localField:"category",foreignField:"category",as:"category_info"}},{$match:{price:{$gt:50000}}},{$project:{name:1,price:1,_id:0}    }])
+
+$lookup , $unwind
+productsDB>  db.products.aggregate([{$lookup:{from:"categories",localField:"category",foreignField:"category",as:"category_info"}},{$unwind:"$category_info"},{$project:{name:1,"category_info.description":1,category:1}}])
+
+productsDB> db.products.aggregate([{$lookup:{from:"categories",localField:"category",foreignField:"category",as:"category_info"}},{$match:{price:{$gt:50000}}},{$unwind:"$category_info"},{$project:{name:1,price:1,_id:0,category:1,"category_info.description":1}    }])
