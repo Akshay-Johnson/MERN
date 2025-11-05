@@ -1,0 +1,51 @@
+.maincontent{
+    background-color: #f0f0f0;
+    padding: 70px;
+    border-radius: 8px;
+    
+    width: 500px;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.maincontent h1{
+    color: #4f1cdc;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.maincontent p{
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #333333;
+}
+
+.maincontent div h2{
+    color: #55e56d;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.maincontent div ul li{
+    padding: 10px;
+    color: rgb(254, 254, 254);
+    box-shadow: #4f1cdc;
+    box-sizing: border-box;
+    background-color: #608967;
+    list-style-type: none;
+    border-radius: 10px;
+    width: 450px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin:0 auto;
+
+}
+
+.maincontent div ul li{
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 5px;
+}
