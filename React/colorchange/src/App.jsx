@@ -9,10 +9,10 @@ function App() {
     setbgColor(Color);
   }
   return (
-    <>
+    <div>
       <body style={{ backgroundColor: bgColor }}></body>
       <Color onColorChange={colorChange} />
-    </>
+    </div>
   );
 }
 
