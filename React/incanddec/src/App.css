@@ -1,0 +1,19 @@
+*{
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+}
+
+button{
+  cursor: pointer;
+  margin: 30px;
+  border: 2px solid white;
+  display: inline-block;
+}
+
+h1{
+  align-items: center;
+  justify-content: center;
+  color: white;
+  display: block;
+}

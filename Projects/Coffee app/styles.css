@@ -49,11 +49,12 @@ header{
     position: fixed;
     width: 100%;
     z-index:5;
+    padding: -20px;
 }
 
 header .navbar{
     display: flex;
-    padding: 20px;
+    padding: 10px;
     justify-content: space-between;
     align-items: center;
     
@@ -61,7 +62,7 @@ header .navbar{
 
 .section-content{
     margin:0 auto;
-    padding: 0 20px;
+    padding: 60px 20px;
     max-width: var(--site-max-width);
 }
 

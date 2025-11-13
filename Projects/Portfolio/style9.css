@@ -4,26 +4,14 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  font-size: 10vw;
+  font-size: 4vw;
   font-family: "Source Sans Pro", sans-serif;
-  animation: reveal 6s ease-in-out infinite,
-             glow 4.5s linear infinite;
+  animation: reveal .1s ease-in ,
+             glow .5s ease-in-out 1s infinite alternate;
 }
 
 /* Looping reveal */
-@keyframes reveal {
-  0% {
-    letter-spacing: normal;
-    background-size: 100% 100%;
-  }
-  80% {
-    letter-spacing: 8px;
-  }
-  100% {
-    letter-spacing: normal;
-    background-size: 100% 100%; /* reset */
-  }
-}
+
 
 /* Glow stays looping */
 @keyframes glow {
