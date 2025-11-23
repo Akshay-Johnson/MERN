@@ -172,7 +172,35 @@ body::-webkit-scrollbar {
       .hero-title { font-size: 45px; }
       .hero-subtitle { font-size: 18px; }
       .icon-left, .icon-right { display: none; }
+      #hero {margin-top:40px ; }
     }
+
+    /* Hero Social Icons */
+.hero-socials {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.hero-socials a {
+  font-size: 30px;
+  color: #ffffff;
+  transition: 0.3s ease;
+}
+
+.hero-socials a:hover {
+  transform: translateY(-6px) scale(1.2);
+  color: #05231d;
+  text-shadow: 0 0 10px #00ffd0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-socials a {
+    font-size: 24px;
+  }
+}
 
 
 /* -------------------- ABOUT SECTION -------------------- */
