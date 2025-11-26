@@ -9,11 +9,11 @@ import {
 
 const router = express.Router();
 
-router.post('/add', addToCart);
-router.put('/update/:itemId', updateCartItem);
-router.delete('/remove/:itemId', removeCartItem);
-router.get('/:customerId', getCart);
-router.delete('/clear/:customerId', clearCart);
+router.post('/add', authMiddleware, addToCart);
+router.put('/update/:itemId', authMiddleware, updateCartItem);
+router.delete('/remove/:itemId', authMiddleware, removeCartItem);
+router.get('/:customerId', authMiddleware, getCart);
+router.delete('/clear/:customerId', authMiddleware, clearCart);
 
 export default router;
 

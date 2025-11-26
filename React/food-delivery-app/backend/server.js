@@ -7,6 +7,10 @@ import connectDB from './config/db.js';
 import customerRoutes from './routes/customerRoutes.js';
 import addressRoutes from './routes/addressRoutes.js';
 import cartRoutes from './routes/cartRoutes.js';
+import menuRoutes from './routes/menuRoutes.js';
+import restaurantRoutes from './routes/restaurantRoutes.js';
+import orderRoutes from './routes/orderRoutes.js';
+
 
 
 dotenv.config();
@@ -34,6 +38,14 @@ app.use('/api/address', addressRoutes);
 //cart routes
 app.use('/api/cart', cartRoutes);
 
+//restaurant routes
+app.use('/api/restaurants', restaurantRoutes); chro
+
+//menu routes
+app.use('/api/menu', menuRoutes);
+
+//order routes
+app.use('/api/orders', orderRoutes);
 
 
 app.get('/', (req, res) => {

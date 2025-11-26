@@ -8,7 +8,8 @@ const calculateTotal = (items) => {
 //add item to cart
 export const addToCart = async (req, res) => {
     try{
-        const { customerId,itemId , name, price, quantity } = req.body;
+        const customerId = req.user.id;
+        const { itemId , name, price, quantity } = req.body;
 
         let cart = await Cart.findOne({ customerId });
 
@@ -40,7 +41,8 @@ export const addToCart = async (req, res) => {
 //update item quantity 
 export const updateCartItem = async (req, res) => {
     try{
-        const { customerId, quantity } = req.body; 
+        const customerId = req.user.id; 
+        const { quantity } = req.body;
         const { itemId} = req.params;
 
         let cart = await Cart.findOne({ customerId });
@@ -67,7 +69,7 @@ export const updateCartItem = async (req, res) => {
 //remove item from cart
 export const removeCartItem = async (req, res) => {
     try{
-        const { customerId } = req.body; 
+        const customerId = req.user.id; 
         const { itemId} = req.params;
 
         let cart = await Cart.findOne({ customerId });
@@ -89,7 +91,7 @@ export const removeCartItem = async (req, res) => {
 //get cart by customer ID
 export const getCart = async (req, res) => {
     try{
-        const { customerId } = req.params;
+        const customerId = req.user.id;
         const cart = await Cart.findOne({ customerId });
 
         if(!cart){
@@ -104,7 +106,7 @@ export const getCart = async (req, res) => {
 //clear cart
 export const clearCart = async (req, res) => {
     try{
-        const { customerId } = req.body;
+        const customerId = req.user.id;
         const cart = await Cart.findOne({ customerId });
 
         if(!cart){
