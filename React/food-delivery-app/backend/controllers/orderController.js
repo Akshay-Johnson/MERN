@@ -1,6 +1,10 @@
 import Cart from '../models/cartModel.js';
 import Order from '../models/orderModel.js';
 
+
+/////////////////////////////////////////// Customer Controllers ////////////////////////////
+
+//create new order
 export const createOrder = async (req, res) => {
     try {
         const customerId= req.user.id;
@@ -75,5 +79,161 @@ export const trackOrderStatus = async (req, res) => {
         res.json({ order });
     } catch (error) {
         res.status(500).json({ message: 'Error tracking order status', error });
+    }
+};
+
+////////////////////////////////////////// Restaurant Owner Controllers ////////////////////////////
+
+//get all orders for restaurant (for restaurant owners)
+export const getRestaurantOrders = async (req, res) => {
+    try {
+        const restaurantId = req.user.id
+
+        const order = await order.find({ restaurantId }).sort({ createdAt: -1 });
+        res.status(200).json({ orders });
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching restaurant orders', error });
+    }
+};
+
+//accept order (for restaurant owners)
+export const acceptOrder = async (req, res) => {
+    try {
+        const restaurantId = req.user.id;
+        const { id } = req.params;
+
+        const order = await Order.findOne({ _id: id, restaurantId });
+
+        if (!order) {
+            return res.status(404).json({ message: 'Order not found' });
+        }
+        order.status = 'Accepted';
+        await order.save();
+
+        res.status(200).json({ message: 'Order accepted', order });
+    } catch (error) {
+        res.status(500).json({ message: 'Error accepting order', error });
+    }
+};
+
+//reject order (for restaurant owners)
+export const rejectOrder = async (req, res) => {
+    try {
+        const restaurantId = req.user.id;
+        const { id } = req.params;
+
+        const order = await Order.findOne({ _id: id, restaurantId });
+
+        if (!order) {
+            return res.status(404).json({ message: 'Order not found' });
+        }
+
+        order.status = 'Rejected';
+        await order.save();
+
+        res.status(200).json({ message: 'Order rejected', order });
+    }  catch (error) {
+        res.status(500).json({ message: 'Error rejecting order', error });
+    }
+};
+
+//mark as preparing (for restaurant owners)
+export const markPreparing = async (req, res) => {
+    try {
+        const restaurantId = req.user.id;
+        const { id } = req.params;
+
+        const order = await Order.findOne({ _id: id, restaurantId });
+
+        if (!order) {
+            return res.status(404).json({ message: 'Order not found' });
+        }
+
+        order.status = 'Preparing';
+        await order.save();
+
+        res.status(200).json({ message: 'Order is being prepared', order });
+
+    } catch (error) {
+        res.status(500).json({ message: 'Error updating order status', error });
+    }
+};
+
+//mark as ready for pickup (for restaurant owners)
+export const markReady = async (req, res) => {
+    try {
+        const restaurantId = req.user.id;
+        const { id } = req.params;
+
+        const order = await Order.findOne({ _id: id, restaurantId });
+
+        if (!order) {
+            return res.status(404).json({ message: 'Order not found' });
+        }
+        order.status = 'ready';
+        await order.save();
+
+        res.status(200).json({ message: 'Order is ready for pickup', order });
+    } catch (error) {
+        res.status(500).json({ message: 'Error updating order status', error });
+    }
+};
+
+
+////////////////////////////////// Delivery Agent Controllers ////////////////////////////
+
+//get assigned orders for delivery agent
+export const getAssignedOrders = async (req, res) => {
+    try {
+        const agentId = req.user.id;
+
+        const order  =  await Order.find({ deliveryAgentId: agentId })
+        .sort({ createdAt: -1 });
+
+        res.status(200).json({ orders });
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching assigned orders', error });
+    }
+};
+
+//mark order as picked up (for delivery agents)
+export const markOrderPickedUp = async (req, res) => {
+    try {
+        const agentId = req.user.id;
+        const { id } = req.params;
+
+        const order = await Order.findOne({ _id: id, deliveryAgentId: agentId });
+
+        if (!order) {
+            return res.status(404).json({ message: 'Order not found' });
+        }
+
+        order.status = "picked";
+        await order.save();
+
+        res.status(200).json({ message: 'Order picked up', order });
+    } catch (error) {
+        res.status(500).json({ message: 'Error updating order status', error });
+    }
+};
+
+//mark order as delivered (for delivery agents)
+export const markOrderDelivered = async (req, res) => {
+    try {
+        const agentId = req.user.id;
+        const { id } = req.params;
+
+        const order = await Order.findOne({ _id: id, deliveryAgentId: agentId });
+
+        if (!order) {
+            return res.status(404).json({ message: 'Order not found' });
+        }
+
+        order.status = 'delivered';
+        await order.save();
+
+        res.status(200).json({ message: 'Order delivered successfully', order });
+    } catch (error) {
+        res.status(500).json({ message: 'Error updating order status', error });
     }
 };

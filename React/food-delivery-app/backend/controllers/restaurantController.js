@@ -107,7 +107,7 @@ export const updateRestaurantProfile = async (req, res) => {
 //Public - Get all restaurants
 export const getAllRestaurants = async (req, res) => {
     try {
-        const {category, search} = req.query;
+        const {category, search, minRating} = req.query;
 
         const filter = {};
 
@@ -118,6 +118,11 @@ export const getAllRestaurants = async (req, res) => {
         if(search){
             filter.name = { $regex: search, $options: 'i' };
         }
+
+        if(minRating){
+            filter.averageRating = { $gte: Number(minRating) };
+        }
+
         
         const restaurants = await Restaurant.find().select('-password');
         res.status(200).json(restaurants);
@@ -210,3 +215,4 @@ export const getCategories = async (req, res) => {
         res.status(500).json({ message: 'error fetching categories', error });
     }
 };
+

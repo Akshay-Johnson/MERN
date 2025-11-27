@@ -10,8 +10,12 @@ import cartRoutes from './routes/cartRoutes.js';
 import menuRoutes from './routes/menuRoutes.js';
 import restaurantRoutes from './routes/restaurantRoutes.js';
 import orderRoutes from './routes/orderRoutes.js';
-
-
+import restaurantOrderRoutes from './routes/restaurantOrderRoutes.js';
+import deliveryAgentRoutes from './routes/deliveryAgentRoutes.js';
+import paymentRoutes from './routes/paymentRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
+import uploadRoutes from './routes/uploadRoutes.js';
+import reviewRoutes from './routes/reviewRoutes.js';
 
 dotenv.config();
 
@@ -39,7 +43,7 @@ app.use('/api/address', addressRoutes);
 app.use('/api/cart', cartRoutes);
 
 //restaurant routes
-app.use('/api/restaurants', restaurantRoutes); chro
+app.use('/api/restaurants', restaurantRoutes); 
 
 //menu routes
 app.use('/api/menu', menuRoutes);
@@ -47,6 +51,24 @@ app.use('/api/menu', menuRoutes);
 //order routes
 app.use('/api/orders', orderRoutes);
 
+//restaurant order routes
+app.use('/api/restaurant/orders',restaurantOrderRoutes);
+
+//delivery agent routes
+app.use('/api/agents', deliveryAgentRoutes);
+
+//payment routes
+app.use('/api/payments',paymentRoutes);
+
+//admin routes
+app.use('/api/admin', adminRoutes);
+
+//uploads
+app.use('/api/upload', uploadRoutes);
+app.use('/uploads', express.static('uploads'));
+
+//post review customer 
+app.use('/api/reviews', reviewRoutes);
 
 app.get('/', (req, res) => {
   res.send('Food Delivery App Backend is running');

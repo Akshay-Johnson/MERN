@@ -9,10 +9,11 @@ import {
     getRestaurantById,
     addCaregory,
     removeCategory,
-    getCategories
+    getCategories,
+    
 
 } from '../controllers/restaurantController.js';
-import { protectRestaurant } from '../middleware/authMiddleware.js';
+import { protectRestaurant } from '../middlewares/restaurantAuth.js';
 
 const router = express.Router();
 

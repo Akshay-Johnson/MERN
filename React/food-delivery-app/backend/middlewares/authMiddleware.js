@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-const middleware= (req, res, next) => {
+const auth = (req, res, next) => {
     const token = req.header('Authorization')?.split(' ')[1];
 
     if (!token) {
@@ -16,4 +16,4 @@ const middleware= (req, res, next) => {
     }
 };
 
-export default middleware;
+export default auth;
